@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "505991049476",
+    "firebase_url": "https://myworksafe-5c06e.firebaseio.com",
+    "project_id": "myworksafe-5c06e",
+    "storage_bucket": "myworksafe-5c06e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505991049476:android:eb91e2cce02e9712",
+        "android_client_info": {
+          "package_name": "com.wohhie.www.myworksafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "505991049476-6h4dvftmaospfvqrmdcuc8odmicdfvlo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wohhie.www.myworksafe",
+            "certificate_hash": "161f37f9f3d9b47d72096a0b9c1f54416a560b82"
+          }
+        },
+        {
+          "client_id": "505991049476-7sq39k87j2mk81aguhqjuuf5m1tmbc6n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC8vRhhw0vkla--WeNIYzfZ0q5RYDLt3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "505991049476-7sq39k87j2mk81aguhqjuuf5m1tmbc6n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>InstApp Report - Notification</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+
+</head>
+
+<body class="bg-gradient-primary">
+
+<div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+        <div class="col-xl-10 col-lg-12 col-md-9">
+
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Send Emergency Message</h1>
+                                </div>
+                                <form class="user" action="send_notification.php">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user" name="title" id="title" aria-describedby="employeeIdHelp" placeholder="Message Title">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control form-control-user" name="message" placeholder="Description"></textarea>
+                                    </div>
+
+                                    <button type="submit"name="send_notification" n class="btn btn-primary btn-user btn-block" id="btn_login">Send Message</button>
+
+
+                                </form>
+                                <hr>
+                                <!--<div class="text-center">
+                                  <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                </div>
+                                <div class="text-center">
+                                  <a class="small" href="register.html">Create an Account!</a>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+
+    /*$(function() {
+      alert("dd");
+    });*/
+    var users;
+    var keys;
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyBLSdQIb3OI7cN8CxAF-1K_DGjSkpUVwq0",
+        authDomain: "myworksafe-5c06e.firebaseapp.com",
+        databaseURL: "https://myworksafe-5c06e.firebaseio.com",
+        projectId: "myworksafe-5c06e",
+        storageBucket: "myworksafe-5c06e.appspot.com",
+        messagingSenderId: "505991049476",
+        appId: "1:505991049476:web:fafde5a3ed307ad5"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    database = firebase.database();
+    var ref = database.ref("incident");
+    ref.on("value",getData,errData);
+
+    function getData(data){
+        users = data.val();
+        keys = Object.keys(users)
+
+        for(var i=0;i < keys.length; i++){
+            var k = keys[i];
+            var type = users[k].type;
+            console.log("type :"+type)
+
+        }
+    }
+
+    function errData(data){
+        console.log("Error!")
+        console.log(err);
+    }
+
+    $("#btn_login").click(function() {
+        var InputEmpId = document.getElementById("InputEmpId").value
+        var InputPassword = document.getElementById("InputPassword").value
+
+        for(var i=0;i < keys.length; i++){
+            var k = keys[i];
+            var password = "7";
+
+            if (InputEmpId == "7" && InputPassword==password){
+                window.open("index.html");
+                break;
+            }
+        }
+    });
+</script>
+</body>
+
+</html>

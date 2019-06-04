@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+  </head>
+  <body>
+      hello
+
+
+
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#config-web-app -->
+
+  <script>
+
+    /*$(function() {
+      alert("dd");
+    });*/
+
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBLSdQIb3OI7cN8CxAF-1K_DGjSkpUVwq0",
+      authDomain: "myworksafe-5c06e.firebaseapp.com",
+      databaseURL: "https://myworksafe-5c06e.firebaseio.com",
+      projectId: "myworksafe-5c06e",
+      storageBucket: "myworksafe-5c06e.appspot.com",
+      messagingSenderId: "505991049476",
+      appId: "1:505991049476:web:fafde5a3ed307ad5"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    database = firebase.database();
+    var ref = database.ref("incident");
+    ref.on("value",getData,errData);
+
+    function getData(data){
+      //console.log(data.val())
+      var incident = data.val();
+      var keys = Object.keys(incident)
+
+      for(var i=0;i < keys.length; i++){
+        var k = keys[i];
+        var description = incident[k].dateTime;
+        var incidentType = incident[k].incidentType;
+        var latitude = incident[k].latitude;
+        var level = incident[k].level;
+        var longitude = incident[k].longitude;
+        var note = incident[k].note;
+        var userId = incident[k].userId;
+        console.log("Des :"+description)
+        console.log("incidentType :"+incidentType)
+        console.log("latitude :"+latitude)
+
+      }
+    }
+
+    function errData(data){
+      console.log("Error!")
+      console.log(err);
+    }
+  </script>
+
+  </body>
+</html>

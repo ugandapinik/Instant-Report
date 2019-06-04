@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">WorkSafe</string>
+    <!-- The class name to the ScrollingChildBehavior required for AppBarLayout -->
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="work_enforcement">Work Enforcement</string>
+    <string name="work_enforcement_details">Please call work enforcement and patrol for emergencies that occur on-work</string>
+    <string name="hint_incident_title">Incident Name</string>
+    <string name="hint_incident_description">Incident Description</string>
+    <string name="btn_report_incident">Report Incident</string>
+
+
+    <string name="emergency_prompt">Choose Emergency</string>
+    <string name="hint_incident_time">Incident Time</string>
+    <string name="hint_incident_date">Incident Date</string>
+    <string name="hint_incident_note">Incident Note</string>
+    <string name="hint_incident_latitude">latitude</string>
+    <string name="hint_incident_longitude">Longitude</string>
+    <string name="title_location_permission">Location Permission</string>
+    <string name="ok">Ok</string>
+    <string name="text_location_permission">Location Permission</string>
+    <string name="hint_incident_location">Location</string>
+    <string-array name="emergency_code_arrays">
+        <item>Explosions</item>
+        <item>Amputations</item>
+        <item>Gas leaks</item>
+        <item>High pressure in wells</item>
+        <item>Cable or block breaks</item>
+        <item>Careless or reckless behavior by workers</item>
+        <item>Delayed equipment repair </item>
+        <item>Poor communication on the rig</item>
+    </string-array>
+
+
+    <string-array name="emergency_type_arrays">
+        <item>Urgent</item>
+        <item>High</item>
+        <item>Medium</item>
+        <item>Low</item>
+    </string-array>
+</resources>

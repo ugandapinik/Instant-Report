@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReportIncidentActivity">
+
+    <!-- toolbar  -->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/Theme.AppCompat.NoActionBar"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="20dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/input_incident_layout"
+                android:layout_marginBottom="15dp"
+                android:orientation="vertical">
+
+
+                <!-- incident -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:text="Incident Type"/>
+
+
+                <!-- level -->
+                <Spinner
+                    android:id="@+id/input_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:entries="@array/emergency_code_arrays"
+                    android:prompt="@string/emergency_prompt" />
+
+
+
+                <!-- incident type -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:text="Incident Level"/>
+
+                <!-- type -->
+                <Spinner
+                    android:id="@+id/input_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:entries="@array/emergency_type_arrays"
+                    android:prompt="@string/emergency_prompt" />
+
+            </LinearLayout>
+
+
+            <!-- date and time -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- date -->
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_date"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/input_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:inputType="none"
+                        android:hint="@string/hint_incident_date" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <!-- time -->
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_time"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/input_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:inputType="none"
+                        android:hint="@string/hint_incident_time" />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+
+            <!-- latitude and longitude -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- date -->
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_latitude"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/input_latitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:inputType="none"
+                        android:focusable="false"
+                        android:hint="@string/hint_incident_latitude" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <!-- time -->
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_longitude"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/input_longitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:inputType="none"
+                        android:hint="@string/hint_incident_longitude" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+
+
+
+            <!-- location -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/input_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:hint="@string/hint_incident_location" />
+
+            <!-- notes -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/input_notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_incident_note" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+
+
+            </android.support.design.widget.TextInputLayout>
+
+
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recyclerView"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textSize="15dp"
+                android:text="Upload Photos / Files / Videos"/>
+
+            <!-- upload files photos and videos -->
+            <!-- upload photos -->
+            <ImageButton
+                android:id="@+id/btn_uploadFiles"
+                android:layout_width="70dp"
+                android:layout_height="65dp"
+                android:scaleType="fitXY"
+                android:cropToPadding="false"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_upload"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/icon_upload"/>
+
+
+
+            <Button android:id="@+id/btn_incident"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_report_incident"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="80dp"
+                android:textColor="@android:color/white"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
